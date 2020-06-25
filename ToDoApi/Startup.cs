@@ -40,7 +40,8 @@ namespace ToDoApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();
         }
     }
 }
