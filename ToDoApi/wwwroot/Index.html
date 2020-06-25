@@ -22,6 +22,17 @@
                 </div>
                 <input type="submit" value="Send" class="btn">
             </form>
+            <span class="label-success" v-if="created">Successfully created</span>
+        </div>
+
+        <div class="list">
+
+            <ul id="example-1">
+                <li v-for="item in todos" :key="item.id">
+                    {{ item.author }} - {{item.task}}
+                </li>
+            </ul>
+
         </div>
 
 

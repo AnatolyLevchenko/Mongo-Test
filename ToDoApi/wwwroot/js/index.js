@@ -4,16 +4,16 @@
     todos: [],
     Task: '',
     Author: '',
-    domain: 'http://localhost:49315/'
+    created: false,
   },
   methods: {
     createEntry() {
       var obj = {};
       obj.Task = this.Task;
       obj.Author = this.Author;
+      var self = this;
 
-
-      fetch('http://localhost:49315/api/entries', {
+      fetch('/api/entries', {
         method: 'post',
         headers: {
           "Content-type": "application/json"
@@ -22,14 +22,34 @@
       })
         // .then(json)
         .then(function (data) {
-          console.log('Request succeeded with JSON response', data);
+          self.created = true;
+          setTimeout(() => {
+            self.created = false;
+          }, 2000)
         })
         .catch(function (error) {
-          console.log('Request failed', error);
+          alert('Request failed', error);
+        });
+    },
+    getEntries() {
+      fetch('/api/entries', {
+        method: 'get',
+        headers: {
+          "Content-type": "application/json"
+        },
+      })
+        .then(response => {
+          response.json().then(json => {
+            this.todos = json;
+          })
+        })
+
+        .catch(function (error) {
+          alert('Request failed', error);
         });
     }
   },
-  mounted() {
-
+  created() {
+    this.getEntries();
   }
 })

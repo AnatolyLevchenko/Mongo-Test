@@ -35,13 +35,26 @@ form{
 
 .btn{
      margin: 10px;
-    display: block;
-    width: 100px;
+     display: block;
+     width: 100px;
      padding: 10px 10px 10px 10px; 
+     margin-left: 90px;
 }
 
 .text-input{
     font-size: 16px;
     margin-bottom: 5px;
+}
+.label-success{
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    background-color: #666;
+    color: whitesmoke;
+    padding:10px 10px;
+}
+
+div.list{
+    margin-top:20px;
 }
 
