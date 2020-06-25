@@ -8,6 +8,23 @@
 
 <body>
     <div id="app">
+        <div>
+            <span>Create</span>
+            <form v-on:submit.prevent="createEntry">
+                <div>
+                    <label for="Task" class="text-label">Task</label>
+                    <input type="text" name="Task" class="text-input" v-model="Task" id="Task">
+                </div>
+
+                <div>
+                    <label for="Author" class="text-label">Autor</label>
+                    <input type="text" name="Author" id="Author" v-model="Author" class="text-input">
+                </div>
+                <input type="submit" value="Send" class="btn">
+            </form>
+        </div>
+
+
     </div>
 
     <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>

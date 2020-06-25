@@ -13,6 +13,8 @@ namespace ToDo.Domain.Models
 
         public string Task { get; set; }
 
+        public string Author { get; set; }
+
         public DateTime CreatedOnUtc { get; set; }
 
     }

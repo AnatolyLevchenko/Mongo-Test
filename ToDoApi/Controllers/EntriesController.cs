@@ -41,7 +41,7 @@ namespace ToDoApi.Controllers
         public ActionResult<Entry> Create(Entry entry)
         {
             _entryService.Create(entry);
-            return CreatedAtRoute("GetEntry", new { id = entry.Id });
+            return CreatedAtAction("Get", new { id = entry.Id});
         }
 
 

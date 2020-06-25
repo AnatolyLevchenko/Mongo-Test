@@ -42,7 +42,8 @@ namespace ToDoApi
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            
+            app.UseMvc();
+
         }
     }
 }
